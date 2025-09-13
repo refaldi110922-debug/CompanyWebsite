@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Our Profile - PT Digital Inovasi</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    <!-- Navbar -->
+    <nav class="nav">
+        <a class="logo" href="index.html"><img src="images/logo.jpg" alt="logo"></a>
+        <button class="nav-toggle" id="navToggle">☰</button>
+        <ul class="nav-list" id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html" class="active">Profile</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner -->
+    <header class="profile-banner animate-fade">
+        <img src="images/banner.jpg" alt="banner" class="banner-img">
+        <div class="banner-text">
+        <h1>PT Digital Inovasi</h1>
+        <p>Membangun Masa Depan dengan Teknologi</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="profile-content">
+        <!-- About -->
+        <section class="about animate-up">
+        <h2>About the Company</h2>
+        <p>
+            PT Digital Inovasi merupakan perusahaan teknologi yang berdiri sejak tahun 2015. 
+            Fokus utama kami adalah pengembangan perangkat lunak, solusi digital, dan transformasi teknologi 
+            untuk berbagai sektor industri. 
+        </p>
+        <p>
+            Dengan menggabungkan keahlian tim yang berpengalaman serta inovasi berkelanjutan, 
+            kami berkomitmen untuk membantu bisnis, organisasi, dan masyarakat dalam menghadapi 
+            tantangan era digital.
+        </p>
+        </section>
+
+        <!-- Vision -->
+        <section class="vision animate-up">
+        <h2>Vision</h2>
+        <p>
+            Menjadi perusahaan teknologi terdepan di Indonesia yang mendorong kemajuan bangsa 
+            melalui solusi digital inovatif dan berkelanjutan.
+        </p>
+        </section>
+
+        <!-- Mission -->
+        <section class="mission animate-up">
+        <h2>Mission</h2>
+        <ul>
+            <li>Menghadirkan produk dan layanan digital yang aman, handal, dan bernilai tambah.</li>
+            <li>Mendukung pengembangan talenta muda Indonesia melalui teknologi.</li>
+            <li>Menjadi mitra strategis bagi bisnis dalam menghadapi transformasi digital.</li>
+            <li>Membangun ekosistem teknologi yang ramah lingkungan dan berkelanjutan.</li>
+        </ul>
+        </section>
+
+        <!-- Core Values -->
+        <section class="values animate-zoom">
+        <h2>Our Core Values</h2>
+        <ul>
+            <li><strong>Inovasi:</strong> Terus berkreasi menghadirkan solusi digital terbaru.</li>
+            <li><strong>Integritas:</strong> Menjunjung tinggi profesionalisme dan kepercayaan.</li>
+            <li><strong>Kolaborasi:</strong> Bersama-sama membangun solusi terbaik.</li>
+            <li><strong>Keberlanjutan:</strong> Menciptakan dampak positif jangka panjang.</li>
+        </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer animate-fade">
+        <p>© <span id="yearProfile"></span> PT Digital Inovasi. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Dynamic year
+        document.getElementById("yearProfile").textContent = new Date().getFullYear();
+
+        // Toggle menu
+        const navToggle = document.getElementById("navToggle");
+        const navList = document.getElementById("navList");
+        navToggle.addEventListener("click", () => {
+        navList.classList.toggle("show");
+        });
+
+        // Animations on scroll
+        const animatedElements = document.querySelectorAll(".animate-up, .animate-fade, .animate-zoom");
+        const showOnScroll = () => {
+        animatedElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+            el.classList.add("active");
+            }
+        });
+        };
+        window.addEventListener("scroll", showOnScroll);
+        window.addEventListener("load", showOnScroll);
+    </script>
+    </body>
+</html>
